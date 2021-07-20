@@ -40,8 +40,8 @@ payload map ( payload01 , indexOfPayload01 ) -> {
 	</flow>
 	<flow name="getFlightsByID" doc:id="44974b61-10ff-4037-b92b-f6d978a89ca1" >
 		<db:select doc:name="SelectByID" doc:id="6149d6f2-9a07-4ac5-9f4d-15dd10ca1975" config-ref="Database_Config" >
-			<db:sql ><![CDATA[SELECT * FROM american where ID = 1]]></db:sql>
-			<db:input-parameters ><![CDATA[#[{'ID' : attributes.uriParams.ID}]]]></db:input-parameters>
+			<db:sql ><![CDATA[SELECT * FROM american where ID = :ID]]></db:sql>
+			<db:input-parameters ><![CDATA[#[{ 'ID' : attributes.uriParams.ID }]]]></db:input-parameters>
 		</db:select>
 		<ee:transform doc:name="TransformOutput_Message" doc:id="95576b49-c7f2-47dd-bbd8-34591a976cb7" >
 			<ee:message >
